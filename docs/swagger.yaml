@@ -1,0 +1,78 @@
+basePath: /api/v1
+definitions:
+  model.Album:
+    properties:
+      artist:
+        type: string
+      id:
+        type: integer
+      price:
+        type: number
+      title:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: ingo.sauerzapf@gmail.com
+    name: Ingo Sauerzapf
+    url: https://linked.in/in/ingosauerzapf
+  description: This is a sample server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /albums:
+    get:
+      consumes:
+      - application/json
+      description: returns all albums in the system
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: get all albums
+    post:
+      consumes:
+      - application/json
+      description: add an album by posting json
+      parameters:
+      - description: Add model
+        in: body
+        name: album
+        required: true
+        schema:
+          $ref: '#/definitions/model.Album'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Album'
+      summary: add an album
+      tags:
+      - albums
+  /albums/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Returns an album by it's id
+      parameters:
+      - description: Album ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: Get an album by it's id
+swagger: "2.0"

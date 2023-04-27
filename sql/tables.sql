@@ -1,0 +1,19 @@
+-- Create album table in default postgres database, add some sample data
+--
+-- psql -d postgres -U postgres -h 0.0.0.0 -a -f ${SCRIPT_DIR}/tables.sql
+--
+DROP TABLE IF EXISTS album;
+CREATE TABLE album (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(128) NOT NULL,
+    artist VARCHAR(128) NOT NULL,
+    price  DECIMAL(5,2) NOT NULL
+);
+
+INSERT INTO album
+   ( title, artist, price)
+VALUES
+   ('Blue Train', 'John Coltrane', 56.99),
+   ('Giant Steps', 'John Coltrane', 63.99),
+   ('Jeru', 'Gerry, Mulligan', 17.99),
+   ('Sarah Vaughan', 'Sarah Vaughan', 34.99);
