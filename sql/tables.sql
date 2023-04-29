@@ -2,15 +2,7 @@
 --
 -- psql -d postgres -U postgres -h 0.0.0.0 -a -f ${SCRIPT_DIR}/tables.sql
 --
-DROP TABLE IF EXISTS album;
-CREATE TABLE album (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(128) NOT NULL,
-    artist VARCHAR(128) NOT NULL,
-    price  DECIMAL(5,2) NOT NULL
-);
-
-INSERT INTO album
+INSERT INTO albums
    ( title, artist, price)
 VALUES
    ('Blue Train', 'John Coltrane', 56.99),

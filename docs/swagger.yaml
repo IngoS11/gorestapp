@@ -1,17 +1,22 @@
 basePath: /api/v1
 definitions:
-  model.Album:
+  controllers.Album:
     properties:
       artist:
         type: string
-      id:
-        type: integer
       price:
         type: number
       title:
         type: string
     type: object
-host: localhost:8080
+  controllers.User:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+host: localhost:3000
 info:
   contact:
     email: ingo.sauerzapf@gmail.com
@@ -25,18 +30,6 @@ info:
   version: "1.0"
 paths:
   /albums:
-    get:
-      consumes:
-      - application/json
-      description: returns all albums in the system
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: ok
-          schema:
-            type: string
-      summary: get all albums
     post:
       consumes:
       - application/json
@@ -47,12 +40,12 @@ paths:
         name: album
         required: true
         schema:
-          $ref: '#/definitions/model.Album'
+          $ref: '#/definitions/controllers.Album'
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/model.Album'
+            $ref: '#/definitions/controllers.Album'
       summary: add an album
       tags:
       - albums
@@ -75,4 +68,59 @@ paths:
           schema:
             type: string
       summary: Get an album by it's id
+      tags:
+      - albums
+  /users:
+    post:
+      consumes:
+      - application/json
+      description: add a user with password to the system
+      parameters:
+      - description: Add model
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.User'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.User'
+      summary: add a user
+      tags:
+      - users
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: login user with email and password
+      parameters:
+      - description: Add model
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.User'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.User'
+      summary: login user
+      tags:
+      - users
+  /users/validate:
+    get:
+      consumes:
+      - application/json
+      description: validate user via his jwt token in cookie
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controllers.User'
+      summary: validate user
+      tags:
+      - users
 swagger: "2.0"

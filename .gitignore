@@ -19,3 +19,6 @@
 
 # Go workspace file
 go.work
+
+# create-table.sh
+create-tables.sh
