@@ -22,3 +22,6 @@ go.work
 
 # create-table.sh
 create-tables.sh
+
+# Exclude cmd directory
+cmd
