@@ -75,3 +75,19 @@ func GetAlbumById(c *gin.Context) {
 	body.Title = album.Title
 	c.IndentedJSON(http.StatusOK, body)
 }
+
+// GetAlbum godoc
+//
+//	@Summary		get all albums
+//	@Description	returns all albums in the system
+//	@Accept			json
+//	@Produce		json
+//	@Success		200	{string}	string	"ok"
+//	@Router			/albums [get]
+func GetAlbum(c *gin.Context) {
+	// albums, err := model.AllAlbums()
+	// if err != nil {
+	// 	c.IndentedJSON(http.StatusNotFound, albums)
+	// }
+	// c.IndentedJSON(http.StatusOK, albums)
+}
