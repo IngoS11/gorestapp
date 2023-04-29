@@ -148,6 +148,6 @@ func Login(c *gin.Context) {
 //	@Router			/users/validate [get]
 func Validate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"mssage": "I am logged in!",
+		"message": "User is valid",
 	})
 }
