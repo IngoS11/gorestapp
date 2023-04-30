@@ -76,18 +76,32 @@ func GetAlbumById(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, body)
 }
 
-// GetAlbum godoc
+// GetAllAlbums godoc
 //
-//	@Summary		get all albums
-//	@Description	returns all albums in the system
-//	@Accept			json
-//	@Produce		json
-//	@Success		200	{string}	string	"ok"
-//	@Router			/albums [get]
-func GetAlbum(c *gin.Context) {
-	// albums, err := model.AllAlbums()
-	// if err != nil {
-	// 	c.IndentedJSON(http.StatusNotFound, albums)
-	// }
-	// c.IndentedJSON(http.StatusOK, albums)
+//	 @Summary		get all albums
+//	 @Description	returns all albums in the system
+//		@Tags           albums
+//		@Accept			json
+//		@Produce		json
+//		@Success		200	{string}	string	"ok"
+//		@Router			/albums [get]
+func GetAllAlbums(c *gin.Context) {
+
+	var albums []models.Album
+	var line Album
+	var body []Album
+	result := initializers.DB.Find(&albums)
+	if result.Error != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "Failed to retreive albums from database",
+		})
+	}
+
+	for _, album := range albums {
+		line.Artist = album.Artist
+		line.Price = album.Price
+		line.Title = album.Title
+		body = append(body, line)
+	}
+	c.JSON(http.StatusOK, body)
 }

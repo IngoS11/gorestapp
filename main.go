@@ -52,9 +52,9 @@ func main() {
 
 		albums := v1.Group("/albums")
 		{
-			// albums.GET("", api.GetAlbum)
+			albums.GET("", controllers.GetAllAlbums)
 			albums.POST("", controllers.AddAlbum)
-			// albums.GET(":id", api.GetAlbumById)
+			albums.GET(":id", controllers.GetAlbumById)
 		}
 
 	}

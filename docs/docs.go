@@ -25,6 +25,27 @@ const docTemplate = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/albums": {
+            "get": {
+                "description": "returns all albums in the system",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "albums"
+                ],
+                "summary": "get all albums",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "add an album by posting json",
                 "consumes": [
