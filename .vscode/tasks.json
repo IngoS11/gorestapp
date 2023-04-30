@@ -15,6 +15,20 @@
 			},
 			"problemMatcher": [],
 			"isBackground": true
-		}
+		},
+		{
+			"type": "shell",
+			"label": "Swag Init",
+			"command": "swag",
+			"args": [
+				"init"
+			],
+			"group": {
+				"kind": "none",
+				"isDefault": false
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		}		
 	]
 }
