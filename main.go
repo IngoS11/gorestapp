@@ -52,9 +52,9 @@ func main() {
 
 		albums := v1.Group("/albums")
 		{
-			albums.GET("", controllers.GetAllAlbums)
-			albums.POST("", controllers.AddAlbum)
-			albums.GET(":id", controllers.GetAlbumById)
+			albums.GET("", middleware.RequireAuth, controllers.GetAllAlbums)
+			albums.POST("", middleware.RequireAuth, controllers.AddAlbum)
+			albums.GET(":id", middleware.RequireAuth, controllers.GetAlbumById)
 		}
 
 	}
