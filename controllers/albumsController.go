@@ -78,13 +78,13 @@ func GetAlbumById(c *gin.Context) {
 
 // GetAllAlbums godoc
 //
-//	 @Summary		get all albums
-//	 @Description	returns all albums in the system
-//		@Tags           albums
-//		@Accept			json
-//		@Produce		json
-//		@Success		200	{string}	string	"ok"
-//		@Router			/albums [get]
+//	@Summary		get all albums
+//	@Description	returns all albums in the system
+//	@Tags			albums
+//	@Accept			json
+//	@Produce		json
+//	@Success		200	{string}	string	"ok"
+//	@Router			/albums [get]
 func GetAllAlbums(c *gin.Context) {
 
 	var albums []models.Album

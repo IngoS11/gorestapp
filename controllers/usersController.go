@@ -144,7 +144,7 @@ func Login(c *gin.Context) {
 //	@Tags			users
 //	@Accept			json
 //	@Produc			json
-//	@Success		200		{object}	controllers.User
+//	@Success		200	{object}	controllers.User
 //	@Router			/users/validate [get]
 func Validate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
