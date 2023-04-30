@@ -22,11 +22,11 @@ info:
     email: ingo.sauerzapf@gmail.com
     name: Ingo Sauerzapf
     url: https://linked.in/in/ingosauerzapf
-  description: This is a sample server.
+  description: A Demo Applcation Managing Albums.
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  title: Swagger Example API
+  title: Albums API
   version: "1.0"
 paths:
   /albums:

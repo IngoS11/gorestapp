@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server.",
-        "title": "Swagger Example API",
+        "description": "A Demo Applcation Managing Albums.",
+        "title": "Albums API",
         "contact": {
             "name": "Ingo Sauerzapf",
             "url": "https://linked.in/in/ingosauerzapf",

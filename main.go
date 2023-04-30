@@ -27,9 +27,9 @@ func init() {
 
 // Main function for the server
 //
-//	@title			Swagger Example API
+//	@title			Albums API
 //	@version		1.0
-//	@description	This is a sample server.
+//	@description	A Demo Applcation Managing Albums.
 //	@contact.name	Ingo Sauerzapf
 //	@contact.url	https://linked.in/in/ingosauerzapf
 //	@contact.email	ingo.sauerzapf@gmail.com
