@@ -1,0 +1,20 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Watch: CompileDaemon",
+			"command": "CompileDaemon",
+			"args": [
+				"-build='go build -o cmd/gorestapp'",
+				"-command='./cmd/gorestapp'"
+			],
+			"group": {
+				"kind": "none",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		}
+	]
+}
