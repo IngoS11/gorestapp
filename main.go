@@ -50,11 +50,11 @@ func main() {
 			users.GET("/validate", middleware.RequireAuth, controllers.Validate)
 		}
 
-		albums := v1.Group("/albums")
+		albums := v1.Group("/albums", middleware.RequireAuth)
 		{
-			albums.GET("", middleware.RequireAuth, controllers.GetAllAlbums)
-			albums.POST("", middleware.RequireAuth, controllers.AddAlbum)
-			albums.GET(":id", middleware.RequireAuth, controllers.GetAlbumById)
+			albums.GET("", controllers.GetAllAlbums)
+			albums.POST("", controllers.AddAlbum)
+			albums.GET(":id", controllers.GetAlbumById)
 		}
 
 	}

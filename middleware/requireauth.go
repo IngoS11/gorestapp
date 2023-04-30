@@ -13,7 +13,7 @@ import (
 )
 
 func RequireAuth(c *gin.Context) {
-	fmt.Println("In MiddleWare")
+
 	// Get the Cookie off request
 	tokenString, err := c.Cookie("Authorization")
 	if err != nil {
