@@ -120,7 +120,7 @@ func Login(c *gin.Context) {
 		"exp": time.Now().Add(time.Hour * 240).Unix(),
 	})
 
-	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
+	tokenString, err := token.SignedString([]byte(os.Getenv("JWT_SECRET")))
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
