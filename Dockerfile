@@ -6,5 +6,7 @@ RUN go build -o /bin/gorestapp .
 
 FROM scratch as bin
 
-COPY --from=build /bin/gorestapp /
- 
+WORKDIR /app
+COPY --from=build /bin/gorestapp /app
+
+CMD [ "/app/gorestapp" ]
